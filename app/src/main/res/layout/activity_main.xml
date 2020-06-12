@@ -30,13 +30,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.33333" />
+        app:layout_constraintGuide_percent="0.3" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/bottomHorizontalGuideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.66666" />
+        app:layout_constraintGuide_percent="0.6" />
     <View
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -61,7 +61,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Hello World!"
-        android:gravity="right"
+        android:gravity="end"
         android:padding="20dp"
         android:background="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
@@ -77,7 +77,7 @@
         android:visibility="visible"
         android:textStyle="bold"
         android:textSize="20sp"
-        android:text="Full Name"
+        android:text="Jane Waitara"
         app:layout_constraintEnd_toStartOf="@+id/endVerticalGuideline"
         app:layout_constraintTop_toBottomOf="@id/topHorizontalGuideline"
         app:layout_constraintBottom_toTopOf="@id/location"
@@ -91,7 +91,7 @@
         android:gravity="end"
         android:includeFontPadding="false"
         android:lineSpacingExtra="3dp"
-        android:text="My Location is Nairobi"
+        android:text="114321-101, Kileleshwa, Nairobi, Kenya"
         app:layout_constraintStart_toStartOf="@+id/midVerticalGuideline"
         app:layout_constraintEnd_toStartOf="@+id/endVerticalGuideline"
         app:layout_constraintTop_toBottomOf="@id/full_name"
@@ -127,5 +127,16 @@
         app:layout_constraintEnd_toStartOf="@+id/endVerticalGuideline"
         app:layout_constraintTop_toBottomOf="@id/email"
         app:layout_constraintBottom_toTopOf="parent"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/colorAccent"
+        android:padding="16dp"
+        android:text="NEW B/S CARD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bottomHorizontalGuideline"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
