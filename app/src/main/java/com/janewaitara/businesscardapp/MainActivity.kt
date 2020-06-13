@@ -22,7 +22,24 @@ class MainActivity : AppCompatActivity() {
      * */
     private var businessCardList = listOf<BusinessCard>()
 
+    lateinit var currentName : String
+    lateinit var currentAddress : String
+    lateinit var currentContact : String
+    lateinit var currentEmail : String
+    lateinit var currentPortfolio : String
+    lateinit var currentCompany : String
 
+
+    companion object{
+
+        private const val MEMBER_NAME_KEY = "MEMBER_NAME"
+        private const val ADDRESS_KEY = "ADDRESS_KEY"
+        private const val CONTACT_KEY = "CONTACT_KEY"
+        private const val EMAIL_KEY = "EMAIL_KEY"
+        private const val PORTFOLIO_KEY = "PORTFOLIO_KEY"
+        private const val COMPANY_KEY = "COMPANY_KEY"
+
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -82,20 +99,21 @@ class MainActivity : AppCompatActivity() {
 
        // Log.d("TAG",businessCardList[0].memberName)
 
-       // Log.d("TAG","Hello")
-
         change_bs_card_button.setOnClickListener { view ->
             displayNewCard()
         }
 
-
         initialBusinessCard()
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+
+       // outState.putString(MEMBER_NAME_KEY,full_name_text.text)
+    }
     /**
      * A function that is called all the time the app is created to display the first business card
      * */
-
     private fun initialBusinessCard() {
 
         val phone = getString(R.string.initialPhoneText)
@@ -109,22 +127,40 @@ class MainActivity : AppCompatActivity() {
         portfolioLink_text.text = getString(R.string.initialPortfolioText)
     }
 
+    /**
+     * creates another card when the button is clicked
+     * */
     private fun displayNewCard() {
 
-        Log.d("TAG","Displayname has been called")
+        Log.d("TAG","Display name has been called")
+
+
+        val randomBusinessCard = getRandomBusinessCard()
+
+
+        full_name_text.text = randomBusinessCard[0]
+        location_text.text = randomBusinessCard[1]
+        company_name_text.text = randomBusinessCard[2]
+        phone_text.text = getString(R.string.phoneText, randomBusinessCard[3])
+        email_text.text = getString(R.string.emailText, randomBusinessCard[4])
+        portfolioLink_text.text = randomBusinessCard[5]
+
+        Log.d("TAG",randomBusinessCard[0])
+    }
+
+    private fun getRandomBusinessCard(): List<String>{
 
         val randomBusinessCard = businessCardList.random()
 
-        Log.d("TAG",randomBusinessCard.memberName)
+        currentName = randomBusinessCard.memberName
+        currentAddress = randomBusinessCard.address
+        currentCompany = randomBusinessCard.companyName
+        currentContact = getString(R.string.phoneText, randomBusinessCard.contact)
+        currentEmail = getString(R.string.emailText, randomBusinessCard.email)
+        currentPortfolio = randomBusinessCard.portfolioUrl
 
-        full_name_text.text = randomBusinessCard.memberName
-        location_text.text = randomBusinessCard.address
-        company_name_text.text = randomBusinessCard.companyName
-        phone_text.text = getString(R.string.phoneText, randomBusinessCard.contact)
-        email_text.text = getString(R.string.emailText, randomBusinessCard.email)
-        portfolioLink_text.text = randomBusinessCard.portfolioUrl
-
-        Log.d("TAG",randomBusinessCard.memberName)
+        var randomBusinessCardList = listOf(currentName,currentAddress,currentCompany,currentContact,currentEmail,currentPortfolio)
+        return randomBusinessCardList
     }
 
 }
