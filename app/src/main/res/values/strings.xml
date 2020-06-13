@@ -15,52 +15,54 @@
     <string name="companyText">Hello Company!</string>
     <string name="initialCompanyText">Google</string>
 
-    <string-array name="names">
-        <item name = "Hannah Maina"/>
-        <item name = "Jenn Bailey"/>
-        <item name = "Luka Henry"/>
-        <item name = "Ray Collins"/>
-        <item name = "Mary Nderitu"/>
-    </string-array>
 
-    <string-array name="addresses">
-        <item name = "114321 &#8211; 101, Kileleshwa, Nairobi, Kenya"/>
-        <item name = "885581 &#8211; 108, Island, Lagos, Nigeria"/>
-        <item name = "985632 &#8211; 589, Lavington, Accra, Ghana"/>
-        <item name = "657488 &#8211; 003, Abu dhabi, Dubai, U.A.E"/>
-        <item name = "356897 &#8211; 341, Milimani, Tokyo, Japan"/>
-    </string-array>
+        <string-array name="names">
+            <item name = "Hannah Maina"/>
+            <item name = "Jenn Bailey"/>
+            <item name = "Luka Henry"/>
+            <item name = "Ray Collins"/>
+            <item name = "Mary Nderitu"/>
+        </string-array>
 
-    <string-array name="emails">
-        <item name = "hannahmaina@gmail.com"/>
-        <item name = "jennbailey@gmail.com"/>
-        <item name = "lukahenry@gmail.com"/>
-        <item name = "raycollins@gmail.com"/>
-        <item name = "marynderitu48@gmail.com"/>
-    </string-array>
+        <string-array name="addresses">
+            <item name = "114321 &#8211; 101, Kileleshwa, Nairobi, Kenya"/>
+            <item name = "885581 &#8211; 108, Island, Lagos, Nigeria"/>
+            <item name = "985632 &#8211; 589, Lavington, Accra, Ghana"/>
+            <item name = "657488 &#8211; 003, Abu dhabi, Dubai, U.A.E"/>
+            <item name = "356897 &#8211; 341, Milimani, Tokyo, Japan"/>
+        </string-array>
 
-    <string-array name="contacts">
-        <item name = "0856795120"/>
-        <item name = "0865971256"/>
-        <item name = "0758963214"/>
-        <item name = "0865987436"/>
-        <item name = "0125698846"/>
-    </string-array>
+        <string-array name="emails">
+            <item name = "hannahmaina@gmail.com"/>
+            <item name = "jennbailey@gmail.com"/>
+            <item name = "lukahenry@gmail.com"/>
+            <item name = "raycollins@gmail.com"/>
+            <item name = "marynderitu48@gmail.com"/>
+        </string-array>
 
-    <string-array name="portfolios">
-        <item name = "hannahmaina.com"/>
-        <item name = "jennbailey.com"/>
-        <item name = "lukahenry.com"/>
-        <item name = "raycollins.com"/>
-        <item name = "marynderitu.com"/>
-    </string-array>
+        <string-array name="contacts">
+            <item name = "0856795120"/>
+            <item name = "0865971256"/>
+            <item name = "0758963214"/>
+            <item name = "0865987436"/>
+            <item name = "0125698846"/>
+        </string-array>
 
-    <string-array name="companies">
-        <item name = "African Women In Leadership"/>
-        <item name = "Open Source Africa"/>
-        <item name = "Scan Group"/>
-        <item name = "RayWenderLich"/>
-        <item name = "Google"/>
-    </string-array>
+        <string-array name="portfolios">
+            <item name = "hannahmaina.com"/>
+            <item name = "jennbailey.com"/>
+            <item name = "lukahenry.com"/>
+            <item name = "raycollins.com"/>
+            <item name = "marynderitu.com"/>
+        </string-array>
+
+        <string-array name="companies">
+            <item name = "African Women In Leadership"/>
+            <item name = "Open Source Africa"/>
+            <item name = "Scan Group"/>
+            <item name = "RayWenderLich"/>
+            <item name = "Google"/>
+        </string-array>
+
 
 </resources>

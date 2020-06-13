@@ -2,8 +2,8 @@ package com.janewaitara.businesscardapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,7 +20,8 @@ class MainActivity : AppCompatActivity() {
     /**
      * A list of all business Cards to display
      * */
-    var businessCardList: List<BusinessCard> = listOf()
+    private var businessCardList = listOf<BusinessCard>()
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +34,8 @@ class MainActivity : AppCompatActivity() {
         emailsArray = resources.getStringArray(R.array.emails)
         portfoliosArray = resources.getStringArray(R.array.portfolios)
         companiesArray = resources.getStringArray(R.array.companies)
+
+        Log.d("TAG","names -> ${namesArray.random()}")
 
         businessCardList = listOf(
             BusinessCard(
@@ -77,13 +80,26 @@ class MainActivity : AppCompatActivity() {
             )
         )
 
+       // Log.d("TAG",businessCardList[0].memberName)
+
+       // Log.d("TAG","Hello")
+
+        change_bs_card_button.setOnClickListener { view ->
+            displayNewCard()
+        }
+
+
         initialBusinessCard()
     }
 
+    /**
+     * A function that is called all the time the app is created to display the first business card
+     * */
+
     private fun initialBusinessCard() {
 
-        var phone = getString(R.string.initialPhoneText)
-        var emailAddress = getString(R.string.initialEmailText)
+        val phone = getString(R.string.initialPhoneText)
+        val emailAddress = getString(R.string.initialEmailText)
 
         full_name_text.text = getString(R.string.initialNameText)
         location_text.text = getString(R.string.initialLocationText)
@@ -91,8 +107,24 @@ class MainActivity : AppCompatActivity() {
         phone_text.text = getString(R.string.phoneText, phone)
         email_text.text = getString(R.string.emailText, emailAddress)
         portfolioLink_text.text = getString(R.string.initialPortfolioText)
+    }
 
+    private fun displayNewCard() {
 
+        Log.d("TAG","Displayname has been called")
+
+        val randomBusinessCard = businessCardList.random()
+
+        Log.d("TAG",randomBusinessCard.memberName)
+
+        full_name_text.text = randomBusinessCard.memberName
+        location_text.text = randomBusinessCard.address
+        company_name_text.text = randomBusinessCard.companyName
+        phone_text.text = getString(R.string.phoneText, randomBusinessCard.contact)
+        email_text.text = getString(R.string.emailText, randomBusinessCard.email)
+        portfolioLink_text.text = randomBusinessCard.portfolioUrl
+
+        Log.d("TAG",randomBusinessCard.memberName)
     }
 
 }
