@@ -94,48 +94,59 @@ class MainActivity : AppCompatActivity() {
                 emailsArray[4],
                 portfoliosArray[4],
                 companiesArray[4]
+            ),
+            BusinessCard(
+                namesArray[5],
+                addressesArray[5],
+                contactsArray[5],
+                emailsArray[5],
+                portfoliosArray[5],
+                companiesArray[5]
             )
         )
 
        // Log.d("TAG",businessCardList[0].memberName)
 
         change_bs_card_button.setOnClickListener { view ->
+            getRandomBusinessCard()
             displayNewCard()
         }
 
-        initialBusinessCard()
+        if (savedInstanceState != null){
+            currentName = savedInstanceState.getString(MEMBER_NAME_KEY)!!
+            currentAddress = savedInstanceState.getString(ADDRESS_KEY)!!
+            currentCompany = savedInstanceState.getString(COMPANY_KEY)!!
+            currentContact = savedInstanceState.getString(CONTACT_KEY)!!
+            currentEmail = savedInstanceState.getString(EMAIL_KEY)!!
+            currentPortfolio = savedInstanceState.getString(PORTFOLIO_KEY)!!
+
+        } else{
+
+            getRandomBusinessCard()
+        }
+
+        displayNewCard()
+
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
 
+        outState.putString(MEMBER_NAME_KEY,currentName)
+        outState.putString(ADDRESS_KEY,currentAddress)
+        outState.putString(COMPANY_KEY,currentCompany)
+        outState.putString(CONTACT_KEY,currentContact)
+        outState.putString(EMAIL_KEY,currentEmail)
+        outState.putString(PORTFOLIO_KEY,currentPortfolio)
 
-       // outState.putString(MEMBER_NAME_KEY,full_name_text.text)
+
     }
     /**
-     * A function that is called all the time the app is created to display the first business card
-     * */
-    private fun initialBusinessCard() {
-
-        val phone = getString(R.string.initialPhoneText)
-        val emailAddress = getString(R.string.initialEmailText)
-
-        full_name_text.text = getString(R.string.initialNameText)
-        location_text.text = getString(R.string.initialLocationText)
-        company_name_text.text = getString(R.string.initialCompanyText)
-        phone_text.text = getString(R.string.phoneText, phone)
-        email_text.text = getString(R.string.emailText, emailAddress)
-        portfolioLink_text.text = getString(R.string.initialPortfolioText)
-    }
-
-    /**
-     * creates another card when the button is clicked
+     * A function that is called all the time the app is created to display the business cards
      * */
     private fun displayNewCard() {
 
         Log.d("TAG","Display name has been called")
-
-        getRandomBusinessCard()
 
         full_name_text.text = currentName
         location_text.text = currentAddress
@@ -147,6 +158,9 @@ class MainActivity : AppCompatActivity() {
         Log.d("TAG",currentAddress)
     }
 
+    /**
+     * gets a random business Card from the list
+     * */
     private fun getRandomBusinessCard(){
 
         val randomBusinessCard = businessCardList.random()
@@ -154,10 +168,14 @@ class MainActivity : AppCompatActivity() {
         currentName = randomBusinessCard.memberName
         currentAddress = randomBusinessCard.address
         currentCompany = randomBusinessCard.companyName
-        currentContact = getString(R.string.phoneText, randomBusinessCard.contact)
-        currentEmail = getString(R.string.emailText, randomBusinessCard.email)
+        currentContact =  randomBusinessCard.contact
+        currentEmail =  randomBusinessCard.email
         currentPortfolio = randomBusinessCard.portfolioUrl
 
     }
+
+
+
+
 
 }

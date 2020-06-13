@@ -1,19 +1,19 @@
 <resources>
     <string name="app_name">Business Card App</string>
     <string name="nameText">Full Name</string>
-    <string name="initialNameText">Jane Waitara</string>
+
     <string name="locationText">Location Address</string>
-    <string name="initialLocationText">114321 &#8211; 101, Kileleshwa, Nairobi, Kenya</string>
+
     <string name="phoneText">PHONE: %1$s</string>
-    <string name="initialPhoneText">0256987425</string>
+
     <string name="emailText">EMAIL: %1$s</string>
-    <string name="initialEmailText">janewaitara@gmail.com</string>
+
     <string name="portfolioText">Portfolio Url</string>
-    <string name="initialPortfolioText">janewaitara.co.ke</string>
+
     <string name="buttonText">NEW B/S CARD</string>
     <string name="imageContentDescription">Business Card Image</string>
     <string name="companyText">Hello Company!</string>
-    <string name="initialCompanyText">Google</string>
+
 
     <string-array name="names">
         <item > Hannah Maina </item>
@@ -21,6 +21,7 @@
         <item > Luka Henry </item>
         <item > Ray Collins </item>
         <item > Mary Nderitu </item>
+        <item > Jane Waitara </item>
     </string-array>
 
     <string-array name="addresses">
@@ -29,6 +30,7 @@
         <item >985632 &#8211; 589, Lavington, Accra, Ghana </item>
         <item >657488 &#8211; 003, Abu dhabi, Dubai, U.A.E </item>
         <item >356897 &#8211; 341, Milimani, Tokyo, Japan </item>
+        <item >114321 &#8211; 101, Kileleshwa, Nairobi, Kenya </item>
     </string-array>
 
     <string-array name="emails">
@@ -37,6 +39,7 @@
         <item >lukahenry@gmail.com </item>
         <item >raycollins@gmail.com </item>
         <item >marynderitu48@gmail.com </item>
+        <item >janewaitara@gmail.com </item>
     </string-array>
 
     <string-array name="contacts">
@@ -45,6 +48,7 @@
         <item >0758963214 </item>
         <item >0865987436 </item>
         <item >0125698846 </item>
+        <item >0256987425 </item>
     </string-array>
 
     <string-array name="portfolios">
@@ -53,6 +57,7 @@
         <item >lukahenry.com </item>
         <item >raycollins.com </item>
         <item >marynderitu.com </item>
+        <item >janewaitara.co.ke </item>
     </string-array>
 
     <string-array name="companies">
@@ -60,6 +65,7 @@
         <item >Open Source Africa </item>
         <item >Scan Group </item>
         <item >RayWenderLich </item>
+        <item >Microsoft </item>
         <item >Google </item>
     </string-array>
 
