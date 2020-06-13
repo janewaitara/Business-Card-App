@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="name_company_size">20sp</dimen>
+    <dimen name="line_spacing_extra_text">1dp</dimen>
+    <dimen name="padding_standard">16dp</dimen>
+    <dimen name="padding_address">5dp</dimen>
+</resources>
