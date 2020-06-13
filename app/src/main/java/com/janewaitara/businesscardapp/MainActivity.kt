@@ -128,7 +128,9 @@ class MainActivity : AppCompatActivity() {
         displayNewCard()
 
     }
-
+    /**
+     * Saving the Business Card properties to maintain the same card when the orientation of a screen changes
+     * */
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
 
@@ -138,7 +140,6 @@ class MainActivity : AppCompatActivity() {
         outState.putString(CONTACT_KEY,currentContact)
         outState.putString(EMAIL_KEY,currentEmail)
         outState.putString(PORTFOLIO_KEY,currentPortfolio)
-
 
     }
     /**
@@ -173,9 +174,5 @@ class MainActivity : AppCompatActivity() {
         currentPortfolio = randomBusinessCard.portfolioUrl
 
     }
-
-
-
-
 
 }
