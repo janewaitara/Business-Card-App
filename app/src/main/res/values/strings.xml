@@ -1,13 +1,19 @@
 <resources>
     <string name="app_name">Business Card App</string>
-    <string name="nameText">Jane Waitara</string>
-    <string name="locationText">114321 &#8211; 101, Kileleshwa, Nairobi, Kenya</string>
+    <string name="nameText">Full Name</string>
+    <string name="initialNameText">Jane Waitara</string>
+    <string name="locationText">Location Address</string>
+    <string name="initialLocationText">114321 &#8211; 101, Kileleshwa, Nairobi, Kenya</string>
     <string name="phoneText">PHONE: %1$s</string>
+    <string name="initialPhoneText">0256987425</string>
     <string name="emailText">EMAIL: %1$s</string>
-    <string name="portfolioText">janewaitara.co.ke</string>
+    <string name="initialEmailText">janewaitara@gmail.com</string>
+    <string name="portfolioText">Portfolio Url</string>
+    <string name="initialPortfolioText">janewaitara.co.ke</string>
     <string name="buttonText">NEW B/S CARD</string>
     <string name="imageContentDescription">Business Card Image</string>
-    <string name="companyText">Hello World!</string>
+    <string name="companyText">Hello Company!</string>
+    <string name="initialCompanyText">Google</string>
 
     <string-array name="names">
         <item name = "Hannah Maina"/>

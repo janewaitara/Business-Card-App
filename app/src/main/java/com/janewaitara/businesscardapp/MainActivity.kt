@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         namesArray = resources.getStringArray(R.array.names)
         addressesArray = resources.getStringArray(R.array.addresses)
         contactsArray = resources.getStringArray(R.array.contacts)
@@ -75,7 +76,23 @@ class MainActivity : AppCompatActivity() {
                 companiesArray[4]
             )
         )
+
+        initialBusinessCard()
     }
 
+    private fun initialBusinessCard() {
+
+        var phone = getString(R.string.initialPhoneText)
+        var emailAddress = getString(R.string.initialEmailText)
+
+        full_name_text.text = getString(R.string.initialNameText)
+        location_text.text = getString(R.string.initialLocationText)
+        company_name_text.text = getString(R.string.initialCompanyText)
+        phone_text.text = getString(R.string.phoneText, phone)
+        email_text.text = getString(R.string.emailText, emailAddress)
+        portfolioLink_text.text = getString(R.string.initialPortfolioText)
+
+
+    }
 
 }
