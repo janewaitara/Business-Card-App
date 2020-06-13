@@ -109,6 +109,7 @@ class MainActivity : AppCompatActivity() {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
 
+
        // outState.putString(MEMBER_NAME_KEY,full_name_text.text)
     }
     /**
@@ -134,21 +135,19 @@ class MainActivity : AppCompatActivity() {
 
         Log.d("TAG","Display name has been called")
 
+        getRandomBusinessCard()
 
-        val randomBusinessCard = getRandomBusinessCard()
+        full_name_text.text = currentName
+        location_text.text = currentAddress
+        company_name_text.text = currentCompany
+        phone_text.text = getString(R.string.phoneText, currentContact)
+        email_text.text = getString(R.string.emailText, currentEmail)
+        portfolioLink_text.text = currentPortfolio
 
-
-        full_name_text.text = randomBusinessCard[0]
-        location_text.text = randomBusinessCard[1]
-        company_name_text.text = randomBusinessCard[2]
-        phone_text.text = getString(R.string.phoneText, randomBusinessCard[3])
-        email_text.text = getString(R.string.emailText, randomBusinessCard[4])
-        portfolioLink_text.text = randomBusinessCard[5]
-
-        Log.d("TAG",randomBusinessCard[0])
+        Log.d("TAG",currentAddress)
     }
 
-    private fun getRandomBusinessCard(): List<String>{
+    private fun getRandomBusinessCard(){
 
         val randomBusinessCard = businessCardList.random()
 
@@ -159,8 +158,6 @@ class MainActivity : AppCompatActivity() {
         currentEmail = getString(R.string.emailText, randomBusinessCard.email)
         currentPortfolio = randomBusinessCard.portfolioUrl
 
-        var randomBusinessCardList = listOf(currentName,currentAddress,currentCompany,currentContact,currentEmail,currentPortfolio)
-        return randomBusinessCardList
     }
 
 }
