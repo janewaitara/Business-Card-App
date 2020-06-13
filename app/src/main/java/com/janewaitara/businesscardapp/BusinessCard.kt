@@ -6,5 +6,6 @@ data class BusinessCard(
     val contact: String,
     val email: String,
     val portfolioUrl: String,
-    val companyName: String
+    val companyName: String,
+    val imageBackground: Int
 )

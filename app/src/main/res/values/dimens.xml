@@ -5,4 +5,5 @@
     <dimen name="padding_standard">16dp</dimen>
     <dimen name="padding_address">1dp</dimen>
     <dimen name="company_name_padding">10dp</dimen>
+    <dimen name="full_name_margin_bottom">5dp</dimen>
 </resources>

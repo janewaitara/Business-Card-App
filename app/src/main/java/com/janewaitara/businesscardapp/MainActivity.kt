@@ -3,6 +3,8 @@ package com.janewaitara.businesscardapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.ImageView
+
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -17,10 +19,12 @@ class MainActivity : AppCompatActivity() {
     private var portfoliosArray: Array<String> = arrayOf()
     private var companiesArray: Array<String> = arrayOf()
 
+
     /**
      * A list of all business Cards to display
      * */
     private var businessCardList = listOf<BusinessCard>()
+    private var imageList = listOf<Int>()
 
     lateinit var currentName : String
     lateinit var currentAddress : String
@@ -28,6 +32,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var currentEmail : String
     lateinit var currentPortfolio : String
     lateinit var currentCompany : String
+     var currentImage: Int = 0
 
 
     companion object{
@@ -38,6 +43,7 @@ class MainActivity : AppCompatActivity() {
         private const val EMAIL_KEY = "EMAIL_KEY"
         private const val PORTFOLIO_KEY = "PORTFOLIO_KEY"
         private const val COMPANY_KEY = "COMPANY_KEY"
+        private const val IMAGE_KEY = "IMAGE_KEY"
 
     }
 
@@ -54,6 +60,8 @@ class MainActivity : AppCompatActivity() {
 
         Log.d("TAG","names -> ${namesArray.random()}")
 
+        imageList = listOf(R.drawable.building,R.drawable.building1,R.drawable.building2,R.drawable.building3)
+
         businessCardList = listOf(
             BusinessCard(
                 namesArray[0],
@@ -61,7 +69,8 @@ class MainActivity : AppCompatActivity() {
                 contactsArray[0],
                 emailsArray[0],
                 portfoliosArray[0],
-                companiesArray[0]
+                companiesArray[0],
+                imageList[0]
             ),
             BusinessCard(
                 namesArray[1],
@@ -69,7 +78,8 @@ class MainActivity : AppCompatActivity() {
                 contactsArray[1],
                 emailsArray[1],
                 portfoliosArray[1],
-                companiesArray[1]
+                companiesArray[1],
+                imageList[1]
             ),
             BusinessCard(
                 namesArray[2],
@@ -77,7 +87,8 @@ class MainActivity : AppCompatActivity() {
                 contactsArray[2],
                 emailsArray[2],
                 portfoliosArray[2],
-                companiesArray[2]
+                companiesArray[2],
+                imageList[2]
             ),
             BusinessCard(
                 namesArray[3],
@@ -85,7 +96,8 @@ class MainActivity : AppCompatActivity() {
                 contactsArray[3],
                 emailsArray[3],
                 portfoliosArray[3],
-                companiesArray[3]
+                companiesArray[3],
+                imageList[3]
             ),
             BusinessCard(
                 namesArray[4],
@@ -93,7 +105,8 @@ class MainActivity : AppCompatActivity() {
                 contactsArray[4],
                 emailsArray[4],
                 portfoliosArray[4],
-                companiesArray[4]
+                companiesArray[4],
+                imageList[3]
             ),
             BusinessCard(
                 namesArray[5],
@@ -101,11 +114,11 @@ class MainActivity : AppCompatActivity() {
                 contactsArray[5],
                 emailsArray[5],
                 portfoliosArray[5],
-                companiesArray[5]
+                companiesArray[5],
+                imageList[0]
             )
         )
 
-       // Log.d("TAG",businessCardList[0].memberName)
 
         change_bs_card_button.setOnClickListener { view ->
             getRandomBusinessCard()
@@ -119,6 +132,9 @@ class MainActivity : AppCompatActivity() {
             currentContact = savedInstanceState.getString(CONTACT_KEY)!!
             currentEmail = savedInstanceState.getString(EMAIL_KEY)!!
             currentPortfolio = savedInstanceState.getString(PORTFOLIO_KEY)!!
+            currentImage = savedInstanceState.getInt(IMAGE_KEY)
+
+            Log.d("Image", currentImage.toString())
 
         } else{
 
@@ -140,6 +156,7 @@ class MainActivity : AppCompatActivity() {
         outState.putString(CONTACT_KEY,currentContact)
         outState.putString(EMAIL_KEY,currentEmail)
         outState.putString(PORTFOLIO_KEY,currentPortfolio)
+        outState.putInt(IMAGE_KEY,currentImage)
 
     }
     /**
@@ -155,6 +172,7 @@ class MainActivity : AppCompatActivity() {
         phone_text.text = getString(R.string.phoneText, currentContact)
         email_text.text = getString(R.string.emailText, currentEmail)
         portfolioLink_text.text = currentPortfolio
+        company_background_image.setImageResource(currentImage)
 
         Log.d("TAG",currentAddress)
     }
@@ -172,6 +190,7 @@ class MainActivity : AppCompatActivity() {
         currentContact =  randomBusinessCard.contact
         currentEmail =  randomBusinessCard.email
         currentPortfolio = randomBusinessCard.portfolioUrl
+        currentImage = randomBusinessCard.imageBackground
 
     }
 
