@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ImageView
+import androidx.appcompat.app.AlertDialog
 
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -173,8 +174,21 @@ class MainActivity : AppCompatActivity() {
         super.onOptionsItemSelected(item)
         when (item.itemId){
             R.id.share_menu -> showShareOptions()
+            R.id.about_menu -> displayBuildVersion()
         }
         return true
+    }
+
+    private fun displayBuildVersion() {
+
+        val dialogTitle = getString(R.string.dialog_title, BuildConfig.VERSION_NAME)
+        val dialogMessage = getString(R.string.author)
+
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle(dialogTitle)
+        builder.setMessage(dialogMessage)
+        builder.create().show()
+
     }
 
     /**
