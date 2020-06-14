@@ -1,8 +1,11 @@
 package com.janewaitara.businesscardapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.ImageView
 
 import kotlinx.android.synthetic.main.activity_main.*
@@ -159,6 +162,45 @@ class MainActivity : AppCompatActivity() {
         outState.putInt(IMAGE_KEY,currentImage)
 
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        super.onCreateOptionsMenu(menu)
+        menuInflater.inflate(R.menu.menu,menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        super.onOptionsItemSelected(item)
+        when (item.itemId){
+            R.id.share_menu -> showShareOptions()
+        }
+        return true
+    }
+
+    /**
+     * A function that implicitly shares the business card when the share menu is selected
+     * */
+    private fun showShareOptions() {
+
+        val cardDetails : String = "Name: $currentName \n" +
+                "Email: $currentImage \n" +
+                "Contact: $currentContact\n" +
+                "Work at: $currentCompany \n" +
+                "Address: $currentAddress \n" +
+                "Portfolio: $currentPortfolio \n"
+
+
+        val intent = Intent()
+        intent.action = Intent.ACTION_SEND
+        intent.putExtra(Intent.EXTRA_TEXT,cardDetails)
+
+        //intent.putExtra(Intent.EXTRA_TEXT,currentCompany)
+        intent.type = "text/plain"
+
+        startActivity(Intent.createChooser(intent,"Share to: "))
+
+    }
+
     /**
      * A function that is called all the time the app is created to display the business cards
      * */

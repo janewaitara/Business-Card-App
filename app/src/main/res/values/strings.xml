@@ -13,6 +13,7 @@
     <string name="buttonText">NEW B/S CARD</string>
     <string name="imageContentDescription">Business Card Image</string>
     <string name="companyText">Hello Company!</string>
+    <string name="share_menu">Share</string>
 
 
     <string-array name="names">
