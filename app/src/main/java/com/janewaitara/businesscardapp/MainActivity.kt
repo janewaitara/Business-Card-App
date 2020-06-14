@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
 
@@ -125,6 +126,8 @@ class MainActivity : AppCompatActivity() {
 
 
         change_bs_card_button.setOnClickListener { view ->
+            val bounce = AnimationUtils.loadAnimation(this,R.anim.bounce)
+            view.startAnimation(bounce)
             getRandomBusinessCard()
             displayNewCard()
         }
