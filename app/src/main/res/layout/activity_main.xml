@@ -2,17 +2,141 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorPrimary"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/startVerticalGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.45" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/midVerticalGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/endVerticalGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topHorizontalGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomHorizontalGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@id/bottomHorizontalGuideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/topHorizontalGuideline"/>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.9"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/startVerticalGuideline"
+        app:layout_constraintBottom_toTopOf="@+id/bottomHorizontalGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/topHorizontalGuideline"
+        android:src="@drawable/building"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:gravity="end"
+        android:padding="20dp"
+        android:background="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/startVerticalGuideline"
+        app:layout_constraintBottom_toTopOf="@+id/bottomHorizontalGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/topHorizontalGuideline" />
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:id="@+id/full_name"
+        android:visibility="visible"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="Jane Waitara"
+        app:layout_constraintEnd_toStartOf="@+id/endVerticalGuideline"
+        app:layout_constraintTop_toBottomOf="@id/topHorizontalGuideline"
+        app:layout_constraintBottom_toTopOf="@id/location"
+        app:layout_constraintVertical_chainStyle="packed"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/location"
+        android:visibility="visible"
+        android:gravity="end"
+        android:includeFontPadding="false"
+        android:lineSpacingExtra="3dp"
+        android:text="114321-101, Kileleshwa, Nairobi, Kenya"
+        app:layout_constraintStart_toStartOf="@+id/midVerticalGuideline"
+        app:layout_constraintEnd_toStartOf="@+id/endVerticalGuideline"
+        app:layout_constraintTop_toBottomOf="@id/full_name"
+        app:layout_constraintBottom_toTopOf="@id/phone"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/phone"
+        android:visibility="visible"
+        android:text="PHONE: %1$d"
+        app:layout_constraintEnd_toStartOf="@+id/endVerticalGuideline"
+        app:layout_constraintTop_toBottomOf="@id/location"
+        app:layout_constraintBottom_toTopOf="@id/email"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/email"
+        android:text="EMAIL: %1$d"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/endVerticalGuideline"
+        app:layout_constraintTop_toBottomOf="@id/phone"
+        app:layout_constraintBottom_toTopOf="@id/portfolioLink"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/portfolioLink"
+        android:text="janewaitara.co.ke "
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/endVerticalGuideline"
+        app:layout_constraintTop_toBottomOf="@id/email"
+        app:layout_constraintBottom_toTopOf="parent"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/colorAccent"
+        android:padding="16dp"
+        android:text="NEW B/S CARD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bottomHorizontalGuideline"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
