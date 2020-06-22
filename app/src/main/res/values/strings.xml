@@ -1,18 +1,17 @@
 <resources>
     <string name="app_name">Business Card App</string>
     <string name="nameText">Full Name</string>
-
     <string name="locationText">Location Address</string>
-
     <string name="phoneText">PHONE: %1$s</string>
-
     <string name="emailText">EMAIL: %1$s</string>
-
     <string name="portfolioText">Portfolio Url</string>
-
     <string name="buttonText">NEW B/S CARD</string>
     <string name="imageContentDescription">Business Card Image</string>
     <string name="companyText">Hello Company!</string>
+    <string name="share_menu">Share</string>
+    <string name="aboutMenu">About</string>
+    <string name="dialog_title">Business Card Dialog %1$s</string>
+    <string name="author">Authored by Jane Waitara</string>
 
 
     <string-array name="names">
@@ -37,7 +36,7 @@
         <item >hannahmaina@gmail.com </item>
         <item >jennbailey52@gmail.com </item>
         <item >lukahhenry68@gmail.com </item>
-        <item >rayWcollins25@gmail.com </item>
+        <item >raywcollins25@gmail.com </item>
         <item >marynderitu48@gmail.com </item>
         <item >janewaitara99@gmail.com </item>
     </string-array>
