@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
 
@@ -125,8 +126,11 @@ class MainActivity : AppCompatActivity() {
 
 
         change_bs_card_button.setOnClickListener { view ->
+            val bounce = AnimationUtils.loadAnimation(this,R.anim.bounce)
+            view.startAnimation(bounce)
             getRandomBusinessCard()
             displayNewCard()
+            applyAnimation()
         }
 
         if (savedInstanceState != null){
@@ -230,7 +234,19 @@ class MainActivity : AppCompatActivity() {
         portfolioLink_text.text = currentPortfolio
         company_background_image.setImageResource(currentImage)
 
+
+
         Log.d("TAG",currentAddress)
+    }
+
+    private fun applyAnimation() {
+        val blinkAnimation = AnimationUtils.loadAnimation(this,R.anim.blink)
+        full_name_text.startAnimation(blinkAnimation)
+        location_text.startAnimation(blinkAnimation)
+        company_name_text.startAnimation(blinkAnimation)
+        phone_text.startAnimation(blinkAnimation)
+        email_text.startAnimation(blinkAnimation)
+        portfolioLink_text.startAnimation(blinkAnimation)
     }
 
     /**
