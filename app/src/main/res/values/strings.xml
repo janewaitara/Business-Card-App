@@ -1,60 +1,72 @@
 <resources>
     <string name="app_name">Business Card App</string>
-    <string name="name_text">Jane Waitara</string>
-    <string name="location_text">114321 &#8211; 101, Kileleshwa, Nairobi, Kenya</string>
-    <string name="phone_text">PHONE: %1$d</string>
-    <string name="email_text">EMAIL: %1$d</string>
-    <string name="portfolio_text">janewaitara.co.ke</string>
-    <string name="button_text">NEW B/S CARD</string>
+    <string name="nameText">Full Name</string>
+
+    <string name="locationText">Location Address</string>
+
+    <string name="phoneText">PHONE: %1$s</string>
+
+    <string name="emailText">EMAIL: %1$s</string>
+
+    <string name="portfolioText">Portfolio Url</string>
+
+    <string name="buttonText">NEW B/S CARD</string>
     <string name="imageContentDescription">Business Card Image</string>
-    <string name="company_text">Hello World!</string>
+    <string name="companyText">Hello Company!</string>
+
 
     <string-array name="names">
-        <item name = "Hannah Maina"/>
-        <item name = "Jenn Bailey"/>
-        <item name = "Luka Henry"/>
-        <item name = "Ray Collins"/>
-        <item name = "Mary Nderitu"/>
+        <item > Hannah Maina </item>
+        <item > Jenn Bailey </item>
+        <item > Luka Henry </item>
+        <item > Ray Collins </item>
+        <item > Mary Nderitu </item>
+        <item > Jane Waitara </item>
     </string-array>
 
-    <string-array name="address">
-        <item name = "114321 &#8211; 101, Kileleshwa, Nairobi, Kenya"/>
-        <item name = "885581 &#8211; 108, Island, Lagos, Nigeria"/>
-        <item name = "985632 &#8211; 589, Lavington, Accra, Ghana"/>
-        <item name = "657488 &#8211; 003, Abu dhabi, Dubai, U.A.E"/>
-        <item name = "356897 &#8211; 341, Milimani, Tokyo, Japan"/>
+    <string-array name="addresses">
+        <item >114321 &#8211; 101, Kileleshwa, Nairobi, Kenya </item>
+        <item >885581 &#8211; 108, Island, Lagos, Nigeria </item>
+        <item >985632 &#8211; 589, Lavington, Accra, Ghana </item>
+        <item >657488 &#8211; 003, Abu dhabi, Dubai, U.A.E </item>
+        <item >356897 &#8211; 341, Milimani, Tokyo, Japan </item>
+        <item >114321 &#8211; 101, Kileleshwa, Nairobi, Kenya </item>
     </string-array>
 
     <string-array name="emails">
-        <item name = "hannahmaina@gmail.com"/>
-        <item name = "jennbailey@gmail.com"/>
-        <item name = "lukahenry@gmail.com"/>
-        <item name = "raycollins@gmail.com"/>
-        <item name = "marynderitu48@gmail.com"/>
+        <item >hannahmaina@gmail.com </item>
+        <item >jennbailey@gmail.com </item>
+        <item >lukahenry@gmail.com </item>
+        <item >raycollins@gmail.com </item>
+        <item >marynderitu48@gmail.com </item>
+        <item >janewaitara@gmail.com </item>
     </string-array>
 
     <string-array name="contacts">
-        <item name = "0856795120"/>
-        <item name = "0865971256"/>
-        <item name = "0758963214"/>
-        <item name = "0865987436"/>
-        <item name = "0125698846"/>
+        <item >0856795120 </item>
+        <item >0865971256 </item>
+        <item >0758963214 </item>
+        <item >0865987436 </item>
+        <item >0125698846 </item>
+        <item >0256987425 </item>
     </string-array>
 
-    <string-array name="portfolio">
-        <item name = "hannahmaina.com"/>
-        <item name = "jennbailey.com"/>
-        <item name = "lukahenry.com"/>
-        <item name = "raycollins.com"/>
-        <item name = "marynderitu.com"/>
+    <string-array name="portfolios">
+        <item >hannahmaina.com </item>
+        <item >jennbailey.com </item>
+        <item >lukahenry.com </item>
+        <item >raycollins.com </item>
+        <item >marynderitu.com </item>
+        <item >janewaitara.co.ke </item>
     </string-array>
 
-    <string-array name="Company">
-        <item name = "African Women In Leadership"/>
-        <item name = "Open Source Africa"/>
-        <item name = "Scan Group"/>
-        <item name = "RayWenderLich"/>
-        <item name = "Google"/>
+    <string-array name="companies">
+        <item >African Women In Leadership </item>
+        <item >Open Source Africa </item>
+        <item >Scan Group </item>
+        <item >RayWenderLich </item>
+        <item >Microsoft </item>
+        <item >Google </item>
     </string-array>
 
 </resources>
